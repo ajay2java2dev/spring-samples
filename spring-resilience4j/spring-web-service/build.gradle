@@ -1,0 +1,95 @@
+plugins {
+    id 'org.springframework.boot'
+    id 'jacoco'
+}
+
+ext {
+    revision = 1.0 //update later to git version
+    buildDate = new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+    currentUser = System.getenv('USER') ?: 'Unknown'
+    title = "${project.rootProject.name}-spring-web-service"
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+    jacoco {
+        destinationFile = layout.buildDirectory.file('jacoco/jacocoTest.exec').get().asFile
+        classDumpDir = layout.buildDirectory.dir('jacoco/classpathdumps').get().asFile
+    }
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springdoc:springdoc-openapi-webflux-ui:1.6.8'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.modelmapper:modelmapper:3.1.0'
+
+    compileOnly 'org.projectlombok:lombok'
+    compileOnly 'org.springframework.boot:spring-boot-devtools'
+
+    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor",
+            "org.springframework.boot:spring-boot-configuration-processor",
+            "org.projectlombok:lombok"
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+    testImplementation 'io.projectreactor:reactor-test'
+    testImplementation 'org.mockito:mockito-inline:4.5.1'
+    testImplementation 'org.hamcrest:hamcrest-core'
+    testImplementation 'com.squareup.okhttp3:mockwebserver'
+}
+
+springBoot {
+    buildInfo {
+        properties {
+            additional = [
+                    'revision': revision,
+                    'built-by': currentUser,
+                    'title': title
+            ]
+        }
+    }
+}
+
+bootJar {
+    archiveFileName = "${project.rootProject.name}-service-impl.jar"
+    manifest.attributes(
+            'Implementation-Title': title,
+            'Implementation-Version': project.version,
+            'Revision': revision,
+            'Build-Date': buildDate,
+            'Built-By': currentUser,
+            'Version': project.version
+    )
+}
+
+test {
+    maxParallelForks = 1
+}
+
+bootBuildImage {
+    imageName = "spring-resiliency/spring-web-service"
+    environment = [
+            "BP_JVM_VERSION" : "17.*"
+    ]
+}

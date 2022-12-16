@@ -1,0 +1,69 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'org.springframework.boot' version '2.7.5' apply false
+}
+
+group 'one.panpiper.sample.resiliency'
+version '1.0-SNAPSHOT'
+description 'Restfull services for the spring resiliency services'
+
+allprojects {
+    apply plugin: 'maven-publish'
+    apply plugin: 'idea'
+
+    group this.group
+    version this.version
+
+    ext {
+        serviceName = "spring-resiliency"
+        apiVersion = "1.0"
+        releaseTrainVersion = "2021.0.1"
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+            google()
+            mavenLocal()
+            maven { url 'https://repo.spring.io/release' }
+        }
+    }
+    repositories {
+        mavenCentral()
+        google()
+        mavenLocal()
+        maven { url 'https://repo.spring.io/release' }
+    }
+}
+
+subprojects { subproject ->
+    apply plugin: 'groovy'
+    apply plugin: 'io.spring.dependency-management'
+
+    group rootProject.group
+    version rootProject.version
+    sourceCompatibility = JavaVersion.VERSION_17
+
+    jar {
+        manifest.attributes provider: 'PanPiper Digital Group Inc'
+    }
+
+    buildscript {
+        dependencies {
+            classpath "io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE"
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom SpringBootPlugin.BOM_COORDINATES
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${releaseTrainVersion}"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+        maxParallelForks = 2
+    }
+}

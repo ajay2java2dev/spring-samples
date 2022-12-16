@@ -8,4 +8,7 @@
  */
 
 rootProject.name = 'spring-resilience4j'
-include('app', 'list', 'utilities')
+include 'spring-web-service'
+include 'service-client-A'
+include 'service-client-B'
+
