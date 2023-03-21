@@ -77,7 +77,7 @@ springBoot {
 }
 
 bootJar {
-    archiveFileName = "${project.rootProject.name}-service-client-B.jar"
+    archiveFileName = "${project.rootProject.name}-service-client-A.jar"
     manifest.attributes(
             'Implementation-Title': title,
             'Implementation-Version': project.version,

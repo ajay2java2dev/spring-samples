@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82011876-2439-46e2-a1b9-9e9a113fd0c7" name="Changes" comment="" />
+    <list default="true" id="82011876-2439-46e2-a1b9-9e9a113fd0c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/service-client-A/spring-resilience4j.service-client-A.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/service-client-B/spring-resilience4j.service-client-B.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/spring-web-service/spring-resilience4j.spring-web-service.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-A/src/main/java/one/panpiper/sample/resiliency/ServiceClientAApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-A/src/main/java/one/panpiper/sample/resiliency/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-A/src/main/java/one/panpiper/sample/resiliency/representation/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-A/src/main/java/one/panpiper/sample/resiliency/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-A/src/main/resources/application-local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-A/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-B/src/main/java/one/panpiper/sample/resiliency/ServiceClientBApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-B/src/main/resources/application-local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-client-B/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-web-service/src/main/java/one/panpiper/sample/resiliency/SpringApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-web-service/src/main/resources/application-local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-web-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-webflux/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-client-A/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/service-client-A/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-client-A/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-client-B/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-web-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-web-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-web-service/src/main/java/org/example/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +45,26 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2IyODRizBNokhFHzGO1MuaZXoQv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,17 +72,99 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/ajay/repo/spring-samples/spring-resilience4j/spring-web-service/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "spring.configuration.checksum": "1929c3682fc218e4e423aaafe169a5ce",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-web-service/src/main/resources" />
+      <recent name="$PROJECT_DIR$/service-client-B/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringApplication">
+    <configuration name="ServiceClientAApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="spring-resilience4j.service-client-A.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="one.panpiper.sample.resiliency.ServiceClientAApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="one.panpiper.sample.resiliency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceClientBApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="spring-resilience4j.service-client-B.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="one.panpiper.sample.resiliency.ServiceClientBApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="one.panpiper.sample.resiliency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="spring-resilience4j.spring-web-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="one.panpiper.sample.resiliency.SpringApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="one.panpiper.sample.resiliency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ServiceClientAApp" />
+      <item itemvalue="Spring Boot.ServiceClientBApp" />
+      <item itemvalue="Spring Boot.SpringApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SpringApplication" />
+        <item itemvalue="Spring Boot.ServiceClientAApp" />
+        <item itemvalue="Spring Boot.ServiceClientBApp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,10 +174,23 @@
       <option name="presentableId" value="Default" />
       <updated>1671150241574</updated>
       <workItem from="1671150243157" duration="451000" />
+      <workItem from="1671155897850" duration="2824000" />
+      <workItem from="1671159340415" duration="22000" />
+      <workItem from="1671159368732" duration="358000" />
+      <workItem from="1671235833620" duration="457000" />
+      <workItem from="1671311934568" duration="136000" />
+      <workItem from="1671899365129" duration="72000" />
+      <workItem from="1671899537551" duration="159000" />
+      <workItem from="1671899786245" duration="1420000" />
+      <workItem from="1672249538662" duration="2088000" />
+      <workItem from="1673011668622" duration="7933000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
