@@ -1,6 +1,11 @@
 package one.panpiper.sample.kafka.springkafka.configuration;
 
+import one.panpiper.sample.kafka.springkafka.util.ProducerUtil;
+import org.apache.kafka.clients.admin.NewTopic;
+import org.apache.kafka.common.config.TopicConfig;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.TopicBuilder;
 
 @Configuration
 public class KafkaConfiguration {
@@ -22,4 +27,33 @@ public class KafkaConfiguration {
 //    public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory producerFactory) {
 //        return new KafkaTemplate<>(producerFactory);
 //    }
+
+
+    @Bean
+    public NewTopic createHarryQuotesTopic() {
+        return TopicBuilder.name(ProducerUtil.KAKFA_HARRY_EVENTS_TOPIC)
+                .partitions(6)
+                .replicas(2)
+                .compact()
+                .build();
+    }
+
+
+    @Bean
+    public NewTopic createHarryQuotesRetryTopic() {
+        return TopicBuilder.name(ProducerUtil.KAKFA_HARRY_EVENTS_TOPIC_RETRY)
+                .partitions(6)
+                .replicas(2)
+                .compact()
+                .build();
+    }
+
+    @Bean
+    public NewTopic createHarryQuotesDLQTopic() {
+        return TopicBuilder.name(ProducerUtil.KAKFA_HARRY_EVENTS_TOPIC_DLQ)
+                .partitions(12)
+                .replicas(3)
+                .config(TopicConfig.COMPRESSION_TYPE_CONFIG, "zstd")
+                .build();
+    }
 }
