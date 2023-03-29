@@ -56,4 +56,13 @@ public class KafkaConfiguration {
                 .config(TopicConfig.COMPRESSION_TYPE_CONFIG, "zstd")
                 .build();
     }
+
+    @Bean
+    public NewTopic createHarryQuotesWordCountStreamTopic() {
+        return TopicBuilder.name("streams-wordcount-output")
+                .partitions(6)
+                .replicas(3)
+                .compact()
+                .build();
+    }
 }
