@@ -1,10 +1,11 @@
 package one.panpiper.sample.kafka.springkafka.consumer.quote;
 
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.stereotype.Component;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import one.panpiper.sample.kafka.springkafka.transformer.ConsumerRecordTransformer;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor

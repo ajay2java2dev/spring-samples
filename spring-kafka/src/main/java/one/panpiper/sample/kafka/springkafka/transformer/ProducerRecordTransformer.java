@@ -1,7 +1,8 @@
 package one.panpiper.sample.kafka.springkafka.transformer;
 
-import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 import org.springframework.stereotype.Component;
+
+import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 
 /**
  * Transforms event records to {@link QuoteRecord}
@@ -16,7 +17,7 @@ public class ProducerRecordTransformer {
         return createQuoteRecord(key, value);
     }
 
-    private QuoteRecord createQuoteRecord (Long key, String value) {
+    private QuoteRecord createQuoteRecord(Long key, String value) {
         var quoteRecord = new QuoteRecord();
         quoteRecord.setQuoteId(key);
         quoteRecord.setQuote(value);

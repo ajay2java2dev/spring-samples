@@ -1,6 +1,7 @@
 package one.panpiper.sample.kafka.springkafka.representation.quote;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +10,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class QuoteRecord extends QuoteSchema{
+public class QuoteRecord extends QuoteSchema {
 
     @JsonProperty("quote_id")
     private Long quoteId;

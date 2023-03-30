@@ -1,12 +1,13 @@
 package one.panpiper.sample.kafka.springkafka.consumer.quote;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 
 @Component
 @RequiredArgsConstructor
@@ -32,7 +33,7 @@ public class HarryPotterQuoteEventConsumer {
         validateResponse(record, result);
     }
 
-    private void validateResponse (ConsumerRecord<Long, QuoteRecord> record, boolean processingResult) {
+    private void validateResponse(ConsumerRecord<Long, QuoteRecord> record, boolean processingResult) {
         if (!processingResult) {
             log.error("processed unsuccessfully. key: {}", record.key());
             template.send("ENTERPRISE.PAN.PIPER.HARRY.EVENTS.DLQ", record.key(), record.value());

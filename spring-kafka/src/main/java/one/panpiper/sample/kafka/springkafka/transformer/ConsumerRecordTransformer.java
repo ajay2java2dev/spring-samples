@@ -1,8 +1,9 @@
 package one.panpiper.sample.kafka.springkafka.transformer;
 
-import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.stereotype.Component;
+
+import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 
 /**
  * Transforms event records to {@link QuoteRecord}
@@ -17,7 +18,7 @@ public class ConsumerRecordTransformer {
         return createQuoteRecord(consumerRecord);
     }
 
-    private QuoteRecord createQuoteRecord (ConsumerRecord consumerRecord) {
+    private QuoteRecord createQuoteRecord(ConsumerRecord consumerRecord) {
         return (QuoteRecord) consumerRecord.value();
     }
 }
