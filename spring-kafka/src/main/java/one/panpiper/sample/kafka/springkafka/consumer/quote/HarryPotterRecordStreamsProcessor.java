@@ -23,7 +23,7 @@ import one.panpiper.sample.kafka.springkafka.transformer.ConsumerRecordTransform
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class ConsumerRecordStreamsProcessor {
+public class HarryPotterRecordStreamsProcessor {
 
     private final ConsumerRecordTransformer consumerRecordTransformer;
     @Value("${kafka-harry.topic}")
@@ -47,13 +47,18 @@ public class ConsumerRecordStreamsProcessor {
         KTable<String, Long> wordCounts = textLines
                 // Split each text line, by whitespace, into words.
                 // The textLines have both key and values. we can ignore the key and just concentrate on the value as shown below
-                .flatMapValues(value -> Arrays.asList(value.getQuote().toLowerCase().split("\\W+")))
+                .flatMapValues(value -> {
+                    log.info("processing quote: \'{}\'", value.getQuote());
+                    return Arrays.asList(value.getQuote().toLowerCase().split("\\W+"));
+                })
                 // We use 'groupBy' to ensure the words are available as message keys
                 .groupBy((key, value) -> value, Grouped.with(stringSerde, stringSerde))
                 // Count the occurences of each word
                 .count();
 
         //Convert the 'KTable<String, Long>' into a 'KStream<String, Long>' and write to the output topic.
-        wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
+        wordCounts.toStream()
+                .peek((key, value) -> log.info("processed - key: {}, value: {}", key, value))
+                .to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
     }
 }

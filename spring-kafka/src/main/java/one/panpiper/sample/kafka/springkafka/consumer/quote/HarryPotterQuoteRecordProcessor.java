@@ -10,7 +10,7 @@ import one.panpiper.sample.kafka.springkafka.transformer.ConsumerRecordTransform
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class ConsumerRecordProcessor {
+public class HarryPotterQuoteRecordProcessor {
 
     private final ConsumerRecordTransformer consumerRecordTransformer;
 

@@ -8,7 +8,7 @@ import org.springframework.kafka.config.TopicBuilder;
 
 import one.panpiper.sample.kafka.springkafka.util.ProducerUtil;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class KafkaConfiguration {
 
     //use this bean to create a KafkaTemplate

@@ -14,7 +14,7 @@ import one.panpiper.sample.kafka.springkafka.representation.quote.QuoteRecord;
 @Slf4j
 public class HarryPotterQuoteEventConsumer {
 
-    private final ConsumerRecordProcessor consumerRecordProcessor;
+    private final HarryPotterQuoteRecordProcessor harryPotterQuoteRecordProcessor;
     private final KafkaTemplate<Long, QuoteRecord> template;
 
     @KafkaListener(topics = "ENTERPRISE.PAN.PIPER.HARRY.EVENTS", groupId = "spring-boot-harry-quote-consumer")
@@ -26,7 +26,7 @@ public class HarryPotterQuoteEventConsumer {
         //continue processing here...
         var result = Boolean.FALSE;
         try {
-            result = consumerRecordProcessor.processRecord(record);
+            result = harryPotterQuoteRecordProcessor.processRecord(record);
         } catch (Exception ex) {
             log.error("An exception has occurred: {}", ex.getMessage(), ex);
         }
